@@ -1,0 +1,740 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; /* Corrected font family name */
+}
+
+body {
+    background:0; /* Dark blue background */
+    color: #ffffff; /* White text */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-image: url("image/Dark Blue Modern News Update Zoom Virtual Background (3).jpg");
+    background-size: cover;
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #ffffff; /* White logo text */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transform: translateX(100%); /* Start off-screen */
+    animation: slideInNav 1s forwards; /* Slide-in animation for navbar */
+}
+
+@keyframes slideInNav {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ffffff; /* White navbar text */
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px; /* Adjusted margin for spacing between navbar links */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.navbar a:hover {
+    color: #64b5f6; /* Light blue on hover */
+}
+
+/* Home section styles */
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+    padding: 0 10%;
+    text-align: left; /* Align text content to the left */
+    opacity: 0; /* Initially hidden */
+    animation: slideInContent 1s forwards; /* Slide-in animation for content */
+}
+
+@keyframes slideInContent {
+    from {
+        opacity: 0;
+        transform: translateX(-100px); /* Slide in from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.home-content {
+    max-width: 600px;
+    text-align: left; /* Align text content to the left */
+}
+
+.home-content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #64b5f6; /* Light blue heading */
+}
+
+.home-content h3 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff; /* White subheading */
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+/* Button box styles */
+.btn-box {
+    display: flex;
+    justify-content: space-around; /* Adjusted to space around buttons */
+    width: 100%;
+    max-width: 400px; /* Adjusted maximum width for responsiveness */
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px; /* Adjusted height for buttons */
+    background: #64b5f6; /* Light blue button background */
+    border: 2px solid #64b5f6; /* Light blue button border */
+    border-radius: 8px;
+    font-size: 18px;
+    color: #ffffff; /* White button text */
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    overflow: hidden; /* Added to prevent overflow issues */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.btn-box a:hover {
+    background-color: transparent;
+    color: #64b5f6; /* Light blue on hover */
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #64b5f6; /* Light blue button text */
+    border-color: #64b5f6; /* Light blue button border */
+}
+
+.btn-box a:nth-child(2):hover {
+    background-color: #64b5f6; /* Light blue on hover */
+    color: #ffffff; /* White button text */
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #000000; /* Black overlay */
+    z-index: -1;
+    transition: width 0.3s ease; /* Smooth transition */
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between; /* Adjusted for spacing between social icons */
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #64b5f6; /* Light blue border */
+    border-radius: 50%;
+    font-size: 20px;
+    color: #64b5f6; /* Light blue icon */
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.home-sci a:hover {
+    background-color: #64b5f6; /* Light blue on hover */
+    color: #ffffff; /* White icon on hover */
+}
+
+/* Image Styles */
+.image-container {
+    position: center;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: auto;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.home:hover .image-container {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+/* About section styles */
+.about {
+    padding: 80px 10%;
+    text-align: center;
+    position: relative; /* Added relative positioning for child elements */
+    background-color:0;
+    background-image: url("image/Dark Blue Modern News Update Zoom Virtual Background (1).jpg");
+    background-size: cover;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards; /* Fade-in animation */
+}
+
+.about-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #64b5f6; /* Light blue heading */
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slideInDown 1.5s ease-in-out forwards; /* Slide-in animation */
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: slideInUp 1.5s ease-in-out forwards; /* Slide-in animation */
+}
+
+.about-sci {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; /* Fade-in animation */
+}
+
+.about-sci a {
+    margin: 0 10px; /* Adjusted margin for spacing between social icons */
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; /* Fade-in animation */
+}
+
+.about-sci a:hover {
+    background-color: transparent;
+    color: #64b5f6; /* Light blue on hover */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Services section styles */
+.services {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: darkslategray; /* Dark background for contrast */
+    background-image: url("image/Dark Blue Modern News Update Zoom Virtual Background (1).jpg");
+    background-size: cover;
+}
+
+.services-content {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards; /* Fade-in animation */
+}
+
+.services-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #64b5f6; /* Light blue heading */
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slideInDown 1.5s ease-in-out forwards; /* Slide-in animation */
+}
+
+.services-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; /* Fade-in animation */
+}
+
+.service-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards; /* Fade-in animation */
+}
+
+.service-box {
+    width: 300px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    transition: transform 0.3s, background-color 0.3s;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.service-box:nth-child(1) {
+    animation-delay: 0.3s; /* Delay for the first box */
+}
+
+.service-box:nth-child(2) {
+    animation-delay: 0.6s; /* Delay for the second box */
+}
+
+.service-box:nth-child(3) {
+    animation-delay: 0.9s; /* Delay for the third box */
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    background-color: darkslategray; /* Light blue background on hover */
+}
+
+.service-box i {
+    font-size: 40px;
+    color: #64b5f6; /* Light blue icon */
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards; /* Fade-in animation */
+}
+
+.service-box h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff; /* White heading */
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideInRight 1.5s ease-in-out forwards; /* Slide-in animation */
+}
+
+.service-box p {
+    font-size: 16px;
+    color: white; /* Light grey text */
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; /* Fade-in animation */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Portfolio section styles */
+.portfolio {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: darkslategray; /* Dark background for contrast */
+    background-image: url("image/Dark Blue Modern News Update Zoom Virtual Background (1).jpg");
+    background-size: cover;
+}
+
+.portfolio-content {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.portfolio-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #64b5f6; /* Light blue heading */
+    margin-bottom: 20px;
+    animation: slideInDown 1s ease-in-out forwards;
+}
+
+.portfolio-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+.portfolio-item {
+    background: 0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    width: calc(30% - 40px); /* Adjusted width for three items per row with margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.portfolio-item:nth-child(1) {
+    animation-delay: 0.3s; /* Delay for the first item */
+}
+
+.portfolio-item:nth-child(2) {
+    animation-delay: 0.6s; /* Delay for the second item */
+}
+
+.portfolio-item:nth-child(3) {
+    animation-delay: 0.9s; /* Delay for the third item */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.portfolio-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff; /* White heading */
+    margin-bottom: 10px;
+    animation: slideInRight 1s ease-in-out forwards;
+}
+
+.portfolio-item p {
+    font-size: 16px;
+    color: #bbbbbb; /* Light grey text */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Contact section styles */
+.contact {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: 0; /* Dark background for contrast */
+    background-image: url("image/Dark Blue Modern News Update Zoom Virtual Background (1).jpg");
+    background-size: cover;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.contact-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #64b5f6; /* Light blue heading */
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideInDown 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.contact-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s ease-in-out forwards;
+    animation-delay: 0.7s;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInScale 2.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 1.2s;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 10px; /* Smaller padding for smaller bars */
+    background: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff; /* White input text */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.input-box label {
+    position: absolute;
+    top: -20px; /* Position label above the input */
+    left: 0;
+    color: #bbb; /* Light grey label */
+    pointer-events: none;
+    transition: 0.3s;
+    font-size: 14px; /* Smaller font size for the label */
+}
+
+.contact-form .input-box textarea {
+    min-height: 150px;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.btn-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 3s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+.btn-box button {
+    padding: 15px 30px;
+    background: black; /* Light blue button background */
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #ffffff; /* White button text */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-box button:hover {
+    background: #1a73e8; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
